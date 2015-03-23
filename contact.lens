@@ -1,0 +1,74 @@
+﻿<koken:include file="layouts/header.html" />
+
+    <koken:head>
+		<title>Kontakta {{ site.title }}</title>
+      <meta property="og:site_name" content="Kontakta {{ site.title }}" />
+      <meta property="og:type" content="website" />
+	  <!-- Get the CSS for the contact.lens -->
+	  <link rel="stylesheet" type="text/css" href="/contactform/css/contact.css" />
+	  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marck+Script" />
+	  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </koken:head>
+
+<script src="/contactform/js/contact_form.js"></script>
+<div id="content">
+  <article>
+  <h1>Kontakta {{ site.title }}&nbsp;</h1>
+    <form id="ajax-contact-form" role="form" class="form-horizontal">
+      <fieldset>
+        <div id="fields">
+          <div class="form_group">
+            <label class="contact_label" for="name">Namn:</label>
+            <input id="name" type="text" size="30" name="name" required value="" placeholder="Namn" />
+          </div>
+          <div class="form_group">
+            <label class="contact_label" for="email">Epostadress:</label>
+            <input id="email" type="email" size="30" name="email" required value="" placeholder="adress@email.com" />
+          </div>
+          <div class="form_group">
+            <label class="contact_label" for="subject">Rubrik:</label>
+            <input id="subject" type="text" size="30" name="subject" required value="" placeholder="Text" />
+          </div>
+          <div class="form_group">
+            <label class="contact_label" for="message">Ditt meddelande:</label>
+            <textarea id="message" name="message" required rows="10" cols="30" placeholder="Ditt meddelande" ></textarea>
+          </div>
+		  <div class="g-recaptcha" data-sitekey="6LcSAQITAAAAANwf3-rKzvUCXMTBnmjINf-uebrQ"></div>
+          <input type="submit" value="Skicka" />
+        </div>
+        <div id="note"></div>
+      </fieldset>
+    </form>
+		<div class="visitkort">
+			<h1 id="visitkort">{{ site.title }}</h1>
+			<p>&nbsp;{{ profile.name }}<br />
+				&nbsp;Höjdvägen 6<br />
+				&nbsp;SE-45430 Brastad, Sweden<br />
+			</p>
+				<div class="socialicons">
+					&nbsp;<a href="skype:black_skorpio?call" title="Kontakta mig via skype">
+						<img src="/contactform/icons/skype-64.png" width="34" height="34" hspace="5" vspace="5" alt="skype" />
+					</a>
+					<koken:profile_facebook>
+						<a href="{{ profile.facebook }}" title="Kontakta mig via Facebook">
+							<img src="/contactform/icons/facebook-7-64.png" width="34" height="34" hspace="5" vspace="5" alt="Facebook" />
+						</a>
+					</koken:profile_facebook>
+
+					<a href="http://www.500px.com/BaldursPhotography" title="kontakta mig via 500px">
+						<img src="/contactform/icons/500px-4-64.png" width="34" height="34" hspace="5" vspace="5" alt="500px" />
+					</a>
+					<a href="http://instagram.com/bjarnevaryostrand/" title="Följ mig via Instagram">
+						<img src="/contactform/icons/instagram-4-64.png" width="34" height="34" hspace="5" vspace="5" alt="Instagram" />
+					</a>
+					<koken:profile_twitter>
+						<a href="https://twitter.com/{{ profile.twitter }}" title="Följ mig på Twitter">
+							<img src="/contactform/icons/twitter-4-64.png" width="34" height="34" hspace="5" vspace="5" alt="Twitter" />
+						</a>
+					</koken:profile_twitter>
+				</div>
+			
+		</div>
+  </article>
+</div>
+<koken:include file="layouts/footer.html" />

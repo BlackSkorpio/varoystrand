@@ -1,0 +1,71 @@
+﻿<koken:include file="layouts/header.html" />
+
+    <koken:head>
+		<title>Logga in på {{ site.title }}</title>
+      <meta property="og:site_name" content="Logga in på {{ site.title }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="{{ location.site_url }}{{ location.here }}" />
+	  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marck+Script" />
+<style type="text/css">
+<!--
+
+#loginform {
+	width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	border:2px solid;
+	border-radius: 15px;
+	box-shadow: 3px 3px #000000;
+	background-color: antiquewhite;
+	padding-bottom: 10px;
+	text-align: center;
+}
+button {
+	vertical-align: middle;
+	text-align: center;
+	background: #dcdcdc url(/storage/custom/sign-up-icon2.png) no-repeat scroll 5px center;
+	padding: 5px 5px 5px 37px;
+	border: 1px solid #666;
+	border-radius: 10px;
+}
+input[type=password] {
+	padding 10px;
+	border: none;
+	border-bottom: solid 2px #c9c9c9;
+	transition: border 0.3s;
+}
+input[type=password]:focus,
+input[type=password].focus {
+	border-bottom: solid 2px #969696;
+}
+#loginheader {
+	font-family: Marck Script;
+	font-size: 1.875em;
+	font-weight: bold;
+	line-height: 1.5em;
+	color: #2b2b2b;
+	white-space: nowrap;
+}
+-->
+</style>
+	  <meta name="robots" content="noindex">
+    </koken:head>
+<div id="content">
+  <article>
+	<!--<header>
+	</header>-->
+	<div id="loginform">
+	<h1 id="loginheader">Logga in på<br />{{ site.title }}&nbsp;</h1>
+	<koken:form>
+	<koken:not empty="messages.koken_password_error">
+		<!-- Shows when password is entered incorrectly -->
+		<p>{{ messages.koken_password_error }}</p>
+	</koken:not>
+	<input type="password" name="password" id="password" autofocus placeholder="Ange lösenord" />
+		<button type="submit">Logga in</button>
+	</koken:form>
+	</div>
+  </article>
+</div>
+<koken:include file="layouts/footer.html" />
